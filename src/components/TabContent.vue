@@ -62,7 +62,9 @@
         v-model="phone"
         placeholder="Số điện thoại (vd: 0988922271 😉)"
       />
-      <button class="btn-customize" @click="join">Tham dự</button>
+      <button class="btn-customize" @click="join" :disabled="isLoading">
+        Tham dự
+      </button>
     </div>
 
     <div class="tab__content--message" v-else>
@@ -97,7 +99,8 @@ export default {
       phone: "",
       username: "",
       email: "",
-      isRegisted: false
+      isRegisted: false,
+      isLoading: false
     };
   },
   methods: {
@@ -139,6 +142,7 @@ export default {
     },
 
     async join() {
+      this.isLoading = true;
       const url = "https://yep.ahamove.net/production/register";
 
       let params = {
@@ -156,12 +160,16 @@ export default {
       try {
         response = await fetch(uri);
       } catch (error) {
-        console.log("error", error);
+        this.username = "";
+        this.phone = "";
+        this.email = "";
+        this.isLoading = false;
       }
 
       let result = await response.json();
 
       if (result && result.data) {
+        this.isLoading = false;
         this.isRegisted = true;
         this.setCookie("is_registed", true, 15);
 
@@ -178,6 +186,16 @@ export default {
             "Content-Type": "application/json"
           }
         });
+      }
+
+      if (result && result.message) {
+        this.username = "";
+        this.phone = "";
+        this.email = "";
+        this.isLoading = false;
+        alert(
+          `Vui lòng nhập đúng thông tin số điện thoại và email đã đăng ký với công ty 🤬`
+        );
       }
     }
   },
@@ -322,6 +340,9 @@ export default {
 
 @media screen and (max-width: 780px) {
   .tab__content {
+    .tab__content--form {
+      padding: 0 15px;
+    }
     .tab__content--message {
       span {
         padding: 0 10px;
