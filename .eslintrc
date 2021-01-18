@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "extends": ["plugin:vue/essential", "eslint:recommended"],
+  "rules": {
+    "arrow-parens": 0,
+    "generator-star-spacing": 0,
+    "no-console": 0,
+    "indent": [
+      0,
+      2,
+      {
+        "SwitchCase": 1,
+        "VariableDeclarator": 1,
+        "ArrayExpression": 1,
+        "ObjectExpression": 1
+      }
+    ],
+    "no-tabs": 0,
+    "semi": 0,
+    "vue/custom-event-name-casing": "off",
+    "vue/no-parsing-error": "off"
+  },
+  "parserOptions": {
+    "parser": "babel-eslint"
+  },
+  "globals": {
+    "Vue": true
+  }
+}
