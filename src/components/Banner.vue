@@ -1,5 +1,6 @@
 <template>
   <div class="banner">
+    <img src="@/assets/main-background.png" alt="" />
     <div>
       <img
         class="introduce__right"
@@ -29,10 +30,10 @@ export default {};
 <style lang="scss" scoped>
 .banner {
   height: calc(100vh - 90px);
-  background-image: url("../assets/main-background.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
+  // background-image: url("../assets/main-background.png");
+  // background-size: cover;
+  // background-repeat: no-repeat;
+  // background-position: center center;
   position: relative;
 
   > div {
