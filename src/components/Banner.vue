@@ -29,7 +29,7 @@ export default {};
 <style lang="scss" scoped>
 .banner {
   height: calc(100vh - 90px);
-  background-image: url("../assets/main-background.png");
+  background-image: url("https://ahamove.com/wp-content/uploads/2021/01/main-background.46cc847a.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
