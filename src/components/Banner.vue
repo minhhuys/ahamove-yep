@@ -15,7 +15,7 @@
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"
-        src="@/assets/magical.png"
+        src="https://ahamove.com/wp-content/uploads/2021/01/magical.png"
         alt="magical motherfuck"
       />
     </div>
