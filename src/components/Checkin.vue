@@ -11,7 +11,7 @@
         <b>{{info.phone}}</b>
       </p>
 
-      <button>Checkin</button>
+      <button @click="checkin">Checkin</button>
     </div>
   </div>
 </template>
@@ -22,6 +22,41 @@ export default {
     return {
       info: {}
     };
+  },
+  methods: {
+    async checkin() {
+      const url = "https://yep.ahamove.net/production/checkin";
+
+      let params = {
+        phone: this.info.phone,
+        email: this.info.email
+      };
+      const uri = new URL(url);
+
+      Object.keys(params).forEach(key =>
+        uri.searchParams.append(key, params[key])
+      );
+
+      let response;
+
+      try {
+        response = await fetch(uri);
+      } catch (error) {
+        alert(error);
+      }
+
+      let result = await response.json();
+
+      if (result.message !== "ok") {
+        return alert(result.message);
+      }
+
+      alert("Checkin thành công!");
+
+      setTimeout(() => {
+        window.close();
+      }, 3000);
+    }
   },
   created() {
     const { email, phone } = this.$route.query;

@@ -26,7 +26,7 @@ export default {
       news: [
         {
           id: 1,
-          title: "SHINE YOUR LIGHT - ĐÂY LÀ LÚC TEAM BẠN TỎA SÁNG!",
+          title: "CUỘC THI SHINE YOUR LIGHT",
           description:
             "<span>Đã đến lúc team bạn thể hiện mình</span><br /><span>Bước lên sân khấu với tinh thần chiến binh!</span><br/><span>🚀Cuộc thi “Shine your light” là cơ hội để thể hiện những màu sắc và những sức mạnh đặc biệt của team với 2 vòng thi:</span><br /><span>🎉 Vòng 1 “Shine your color”: từ ngày 11/01 - 18/01 diễn ra online trên 1Office</span><span>🎉Vòng 2 “Let’s shine together” diễn ra ngay tại chương trình Year End Party</span><span>🎖Tổng giá trị giải thưởng của Cuộc thi lên đến 22 triệu đồng!#Shineyourlight</span>",
           url: "https://ahamove.1office.vn/social/company",
