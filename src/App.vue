@@ -5,8 +5,6 @@
 </template>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
-
 *,
 :after,
 :before {
@@ -20,7 +18,7 @@ body {
   -webkit-box-sizing: border-box;
 }
 #app {
-  font-family: "Work Sans", sans-serif;
+  font-family: "Roboto", sans-serif, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

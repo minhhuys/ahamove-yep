@@ -1,8 +1,6 @@
 <template>
   <div class="tab__content">
-    <p style="font-weight: 300">
-      Ahamove Year-end Party 2020 sẽ được tổ chức tại
-    </p>
+    <p style="font-weight: 300">Ahamove Year-end Party 2020 được tổ chức tại</p>
     <img src="@/assets/flower.png" alt="Flowers" />
     <p>TRUNG TÂM HỘI NGHỊ</p>
 
@@ -17,9 +15,9 @@
       <p>{{ info.date }}</p>
     </div>
 
-    <p class="tab__content--time-left-text">Chỉ còn</p>
+    <p class="tab__content--time-left-text" v-if="!info.isHappened">Chỉ còn</p>
 
-    <div class="tab__content--count-time">
+    <div class="tab__content--count-time" v-if="!info.isHappened">
       <div>
         <p>{{ days > 9 ? days : `0${days}` }}</p>
         <span>Ngày</span>
@@ -37,44 +35,41 @@
         <span>Giây</span>
       </div>
     </div>
+    <p v-else class="event-happened">Đã diễn ra</p>
 
     <div class="border-line"></div>
 
-    <div class="tab__content--form" v-if="!isRegisted">
-      <p class="tab__content--form-title">
-        Đăng ký tham gia
-      </p>
-      <input
-        type="text"
-        name="username"
-        v-model="username"
-        placeholder="Tên của bạn"
-      />
-      <input
-        type="text"
-        name="email"
-        v-model="email"
-        placeholder="Email công ty"
-      />
-      <input
-        type="number"
-        name="phone"
-        v-model="phone"
-        placeholder="Số điện thoại (vd: 0988922271 😉)"
-      />
-      <button class="btn-customize" @click="join" :disabled="isLoading">
-        Tham dự
-      </button>
-    </div>
+    <div v-if="!info.isHappened">
+      <div class="tab__content--form" v-if="!isRegisted">
+        <p class="tab__content--form-title">Đăng ký tham gia</p>
+        <input type="text" name="username" v-model="username" placeholder="Tên của bạn" />
+        <input type="text" name="email" v-model="email" placeholder="Email công ty" />
+        <input
+          type="number"
+          name="phone"
+          v-model="phone"
+          placeholder="Số điện thoại (vd: 0988922271 😉)"
+        />
+        <button
+          class="btn-customize"
+          :class="{'loading' : isLoading}"
+          @click="join"
+          :disabled="isLoading"
+        >
+          <span v-if="isLoading">Đang gửi</span>
+          <span v-else>Tham gia</span>
+        </button>
+      </div>
 
-    <div class="tab__content--message" v-else>
-      <img src="@/assets/mail.png" alt="" />
-      <p>Chúng tôi vừa gửi QR code đến email của bạn</p>
-      <span
-        >Vui lòng check mail để kiểm tra QR Code. Bữa tiệc sẽ diễn ra tại địa
-        điểm được gửi trong mail. Hẹn gặp lại bạn với những bất ngờ tại Year end
-        Party Ahamove 2020</span
-      >
+      <div class="tab__content--message" v-else>
+        <img src="@/assets/mail.png" alt />
+        <p>Chúng tôi vừa gửi QR code đến email của bạn</p>
+        <span>
+          Vui lòng check mail để kiểm tra QR Code. Bữa tiệc sẽ diễn ra tại địa
+          điểm được gửi trong mail. Hẹn gặp lại bạn với những bất ngờ tại Year end
+          Party Ahamove 2020
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -138,6 +133,17 @@ export default {
         );
         this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        if (
+          this.days == 0 &&
+          this.hours == 0 &&
+          this.minutes == 0 &&
+          this.seconds == 0
+        ) {
+          console.log("set", this.info.id);
+          this.$emit("setHappened", this.info.id);
+          clearInterval(this.timer);
+        }
       }, 1000);
     },
 
@@ -275,6 +281,11 @@ export default {
     }
   }
 
+  .event-happened {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
   .border-line {
     max-width: 400px;
     margin: 0 auto;
@@ -317,6 +328,11 @@ export default {
     button {
       width: 100%;
       border-radius: 2px;
+    }
+
+    button.loading {
+      background-color: #eaeaea;
+      color: white;
     }
   }
 

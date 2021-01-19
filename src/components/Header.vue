@@ -6,12 +6,10 @@
     <div class="d-flex space-between align-center">
       <div>
         <a @click="scrollTo('introduce')">Giới thiệu</a>
-        <a @click="scrollTo('form')"> Địa điểm tổ chức</a>
+        <a @click="scrollTo('form')">Địa điểm tổ chức</a>
         <a @click="scrollTo('news')">Tin tức chương trình</a>
       </div>
-      <button class="btn-customize" @click="scrollTo('form')">
-        Đăng ký tham gia
-      </button>
+      <button class="btn-customize" @click="scrollTo('form')">Đăng ký tham gia</button>
     </div>
   </header>
 </template>
@@ -27,7 +25,6 @@ export default {
 <style lang="scss" scoped>
 header {
   height: 90px;
-  font-family: "Work Sans", sans-serif;
   font-weight: 600;
 
   div.d-flex {

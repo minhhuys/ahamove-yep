@@ -2,17 +2,17 @@
   <div class="introduce">
     <div class="main-layout d-flex">
       <div class="introduce__left">
-        <h2>
-          AhaMove Year-end Party 2020
-        </h2>
+        <h2>AhaMove Year-end Party 2020</h2>
         <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quas quidem
-          pariatur est, at officiis a rem velit eum qui provident? Quod, omnis
-          excepturi recusandae amet velit nesciunt aspernatur obcaecati natus?
+          Với chủ đề
+          <span style="color: #ff8200">“A MAGICAL TECHNOLOGY”</span>, sự kiện Aha’s YEP nhằm đánh dấu mốc khép lại hành trình ngoạn mục 2020 và chào đón những bùng nổ, bứt phá và “phép màu” từ công nghệ của AhaMove trong năm 2021.
+          <br />
+          <br />Sự kiện hứa hẹn với những sắc màu hiện đại, trẻ trung, sẽ đem đến không gian “sống ảo” cùng những trải nghiệm tuyệt vời cho các AhaClimbers. Bên cạnh đó, các team có cơ hội tỏa sáng và cháy hết mình trên sân khấu với âm thanh, ánh sáng được đầu tư hoành tráng, đậm chất công nghệ. Và hơn hết, cùng hàng loạt nội dung hấp dẫn, siêu bất ngờ sẽ là những món quà đặc biệt dành riêng cho các thành viên nhà AhaMove.
+          <br />
+          <br />Đừng bỏ lỡ sự kiện YEP 2020
+          <span style="color: #ff8200">“A MAGICAL TECHNOLOGY”</span> bạn nhé!
         </p>
-        <button class="btn-customize" @click="scrollTo">
-          Tham gia ngay
-        </button>
+        <button class="btn-customize" @click="scrollTo">Tham gia ngay</button>
       </div>
       <div
         class="introduce__right"
@@ -24,7 +24,7 @@
         data-aos-once="false"
         data-aos-anchor-placement="top-center"
       >
-        <img src="../assets/background-s2.png" alt="" />
+        <img src="../assets/background-s2.png" alt />
       </div>
     </div>
   </div>
@@ -60,6 +60,7 @@ export default {
     p {
       font-size: 18px;
       margin: 30px 0;
+      text-align: justify;
     }
 
     button {
@@ -93,6 +94,7 @@ export default {
 
         p {
           font-size: 16px;
+          text-align: justify;
         }
       }
       .introduce__right {

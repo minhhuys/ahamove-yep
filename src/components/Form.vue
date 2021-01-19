@@ -12,21 +12,18 @@
           class="form__register--tab-link"
           :class="{ active: isActiveTabConent === 'sgn' }"
           @click="selectTab('sgn')"
-        >
-          Sài Gòn
-        </p>
+        >Sài Gòn</p>
         <p
           class="form__register--tab-link"
           :class="{ active: isActiveTabConent === 'han' }"
           @click="selectTab('han')"
-        >
-          Hà Nội
-        </p>
+        >Hà Nội</p>
       </div>
       <TabContent
         :key="isActiveTabConent"
         :info="isActiveTabConent === 'han' ? info[0] : info[1]"
         :data="info"
+        @setHappened="handleEventHappened"
       />
     </div>
   </div>
@@ -56,7 +53,7 @@ export default {
           id: "sgn",
           location: "The ADORA Center",
           detail:
-            "<p>431 Hoàng Văn Thụ, <br/> Phường 4, Q.Tân Bình, <br/> Thành phố Hồ Chí Minh</p>",
+            "<p>431 Hoàng Văn Thụ, <br/> Phường 4, Q.Tân Bình, <br/>Hồ Chí Minh</p>",
           time: `Vào lúc 18 giờ 00`,
           date: "THỨ NĂM - 28 | 01 | 2021",
           timeToCountDown: "Jan 28, 2021 18:00:00",
@@ -68,6 +65,12 @@ export default {
   methods: {
     selectTab(city) {
       this.isActiveTabConent = city;
+    },
+
+    handleEventHappened(id) {
+      console.log("id", id);
+      const location = this.info.find(e => e.id === id);
+      location.isHappened = true;
     }
   },
   mounted() {
