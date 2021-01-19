@@ -82,7 +82,7 @@ export default {
 <style lang="scss" scoped>
 .form {
   //   background: linear-gradient(180deg, #01002b 0%, #2421b4 100%);
-  background-image: url("../assets/form-background.png");
+  background-image: url("https://ahamove.com/wp-content/uploads/2021/01/form-background.png");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
