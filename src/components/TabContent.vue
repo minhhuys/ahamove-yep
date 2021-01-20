@@ -2,7 +2,7 @@
   <div class="tab__content">
     <p style="font-weight: 300">Ahamove Year-end Party 2020 được tổ chức tại</p>
     <img src="@/assets/flower.png" alt="Flowers" />
-    <p>TRUNG TÂM HỘI NGHỊ</p>
+    <p>{{info.id === 'han' ? 'KHÁCH SẠN' : 'TRUNG TÂM HỘI NGHỊ'}}</p>
 
     <p class="tab__content--location text-uppercase">{{ info.location }}</p>
     <p class="tab__content--detail text-uppercase" v-html="info.detail"></p>

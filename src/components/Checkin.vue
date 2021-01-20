@@ -11,7 +11,7 @@
         <b>{{info.phone}}</b>
       </p>
 
-      <button @click="checkin">Checkin</button>
+      <button @click="checkin" :disabled="isLoading">{{isLoading ? `Đang tiến hành` : `Checkin`}}</button>
     </div>
   </div>
 </template>
@@ -20,11 +20,13 @@
 export default {
   data() {
     return {
-      info: {}
+      info: {},
+      isLoading: false
     };
   },
   methods: {
     async checkin() {
+      this.isLoading = true;
       const url = "https://yepapi.ahamove.net/production/checkin";
 
       let params = {
@@ -50,12 +52,9 @@ export default {
       if (result.message !== "ok") {
         return alert(result.message);
       }
-
-      alert("Checkin thành công!");
-
-      setTimeout(() => {
-        window.close();
-      }, 3000);
+      this.isLoading = false;
+      alert("💥Checkin thành công!✨");
+      window.close();
     }
   },
   created() {

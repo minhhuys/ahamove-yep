@@ -34,16 +34,16 @@ export default {
         },
         {
           id: 2,
-          title: "VÒNG 1: “SHINE YOUR COLOR”",
+          title: "XEM NGAY VÒNG 1: “SHINE YOUR COLOR”",
           description:
-            "<span>Vòng 1 “Shine your color”: đã diễn ra vô cùng gây cấn với những tấm hình shooting xịn sò, cực chất đến từ các AhaClimbers.</span> <br /><span>Tinh thần tập thể và sự hết mình trong từng hoạt động khiến BGK khá là căng thẳng trong việc bình chọn và xếp hạng các Team để trao các suất tài trợ tương ứng.</span> <span>Hãy theo dõi và chờ đợi kết quả vòng 1 trong thời gian tới nào.Còn bây giờ cùng ngắm nhìn lại những tấm ảnh lung linh đến từ các team nhà AhaMove nhé!</span>",
+            "<span>Vòng 1 “Shine your color”: đã diễn ra vô cùng gây cấn với những tấm hình shooting xịn sò, cực chất đến từ các AhaClimbers. <br/>Bây giờ cùng ngắm nhìn lại hình ảnh lung linh  đến từ các team nào!</span>",
           url: "https://forms.gle/FbTbFj9vQ35EYRjk9",
           img: "https://ahamove.com/wp-content/uploads/2021/01/Pic-2.png"
         },
         {
           id: 3,
-          title: "VÒNG 2: “LET’S SHINE TOGTHER”",
-          description: `Cuộc thi "Shine your light" nằm trong chuỗi hoạt động của sự kiện, vòng 2 với chủ đề "Let's Shine Together", các AhaClimbers hãy cùng nhau thể hiện những màu sắc và cá tính của riêng mình thông qua các tiết mục văn nghệ đến từ chính Team của các bạn. Hãy cùng chờ đón những tiết mục độc đáo và ấn tượng trong buổi tiệc hoành tráng năm nay nhé! Các team còn chần chờ gì nữa mà không nhanh tay đăng ký ngay đi nào!`,
+          title: "ĐĂNG KÝ NGAY “LET’S SHINE TOGTHER”",
+          description: `Cuộc thi "Shine your light" nằm trong chuỗi hoạt động của sự kiện, vòng 2 với chủ đề "Let's Shine Together", các AhaClimbers hãy cùng nhau thể hiện tiết mục “đỉnh của chớp” ngay nào!!!`,
           url:
             "https://docs.google.com/forms/d/e/1FAIpQLSen1dI-ywlA0djcXWS9IKe88-zhkAapAAAsSNig3zc9Dwrx4w/viewform",
           img: "https://ahamove.com/wp-content/uploads/2021/01/Pic-3.png"
