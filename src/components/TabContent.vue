@@ -64,11 +64,7 @@
       <div class="tab__content--message" v-else>
         <img src="@/assets/mail.png" alt />
         <p>Chúng tôi vừa gửi QR code đến email của bạn</p>
-        <span>
-          Vui lòng check mail để kiểm tra QR Code. Bữa tiệc sẽ diễn ra tại địa
-          điểm được gửi trong mail. Hẹn gặp lại bạn với những bất ngờ tại Year end
-          Party AhaMove 2020
-        </span>
+        <span>Vui lòng check email để nhận thư mời tham dự. Bạn nhớ lưu lại email này để check-in và tham gia các hoạt động khác tại sự kiện. Hẹn gặp lại bạn với những bất ngờ tại Year End Party AhaMove 2020!</span>
       </div>
     </div>
   </div>
