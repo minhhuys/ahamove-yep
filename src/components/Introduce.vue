@@ -16,7 +16,7 @@
       </div>
       <div
         class="introduce__right"
-        data-aos="fade-left"
+        data-aos="fade-up"
         data-aos-offset="100"
         data-aos-delay="50"
         data-aos-duration="400"
