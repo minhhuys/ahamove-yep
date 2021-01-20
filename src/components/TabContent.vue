@@ -1,6 +1,6 @@
 <template>
   <div class="tab__content">
-    <p style="font-weight: 300">Ahamove Year-end Party 2020 được tổ chức tại</p>
+    <p style="font-weight: 300">AhaMove Year-end Party 2020 được tổ chức tại</p>
     <img src="@/assets/flower.png" alt="Flowers" />
     <p>{{info.id === 'han' ? 'KHÁCH SẠN' : 'TRUNG TÂM HỘI NGHỊ'}}</p>
 
@@ -67,7 +67,7 @@
         <span>
           Vui lòng check mail để kiểm tra QR Code. Bữa tiệc sẽ diễn ra tại địa
           điểm được gửi trong mail. Hẹn gặp lại bạn với những bất ngờ tại Year end
-          Party Ahamove 2020
+          Party AhaMove 2020
         </span>
       </div>
     </div>
