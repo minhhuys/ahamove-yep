@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     async checkin() {
-      const url = "https://yep.ahamove.net/production/checkin";
+      const url = "https://yepapi.ahamove.net/production/checkin";
 
       let params = {
         phone: this.info.phone,
@@ -100,6 +100,8 @@ export default {
     font-weight: 600;
     border-radius: 4px;
     cursor: pointer;
+    outline: none;
+    border: none;
   }
 }
 </style>

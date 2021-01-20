@@ -149,7 +149,7 @@ export default {
 
     async join() {
       this.isLoading = true;
-      const url = "https://yep.ahamove.net/production/register";
+      const url = "https://yepapi.ahamove.net/production/register";
 
       let params = {
         phone: this.phone,
