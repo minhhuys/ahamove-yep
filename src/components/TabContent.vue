@@ -178,7 +178,8 @@ export default {
         // Send telegram
         const data = result.data;
         /* eslint-disable */
-        let template = `user: \*${data.name}* %0Aphone: \*${data.phone}* %0Amsc: \*${data.msnv}* %0Acity: \*${data.city_id}*`;
+        // https://ahamove.1office.vn/social/search/user?s=
+        let template = `user: \*${data.name}* %0Aphone: \*${data.phone}* %0Amsc: \*${data.msnv}* %0Acity: \*${data.city_id}* %0A1office: \*https://ahamove.1office.vn/social/search/user?s=${data.phone}*`;
 
         const url = `https://api.telegram.org/bot${TOKEN_HYPE_AF_BOT}/sendMessage?chat_id=${GROUP_ID}&parse_mode=markdown&text=${template}`;
 
