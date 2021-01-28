@@ -15,27 +15,32 @@
       <p>{{ info.date }}</p>
     </div>
 
-    <p class="tab__content--time-left-text" v-if="!info.isHappened">Chỉ còn</p>
-
-    <div class="tab__content--count-time" v-if="!info.isHappened">
-      <div>
-        <p>{{ days > 9 ? days : `0${days}` }}</p>
-        <span>Ngày</span>
-      </div>
-      <div>
-        <p>{{ hours > 9 ? hours : `0${hours}` }}</p>
-        <span>Giờ</span>
-      </div>
-      <div>
-        <p>{{ minutes > 9 ? minutes : `0${minutes}` }}</p>
-        <span>Phút</span>
-      </div>
-      <div>
-        <p>{{ seconds > 9 ? seconds : `0${seconds}` }}</p>
-        <span>Giây</span>
-      </div>
+    <div v-if="info.id === 'han'">
+      <p style="font-size: 30px; color: red;">Tạm hoãn!</p>
     </div>
-    <p v-else class="event-happened">Đã diễn ra</p>
+    <div v-else>
+      <p class="tab__content--time-left-text" v-if="!info.isHappened">Chỉ còn</p>
+
+      <div class="tab__content--count-time" v-if="!info.isHappened">
+        <div>
+          <p>{{ days > 9 ? days : `0${days}` }}</p>
+          <span>Ngày</span>
+        </div>
+        <div>
+          <p>{{ hours > 9 ? hours : `0${hours}` }}</p>
+          <span>Giờ</span>
+        </div>
+        <div>
+          <p>{{ minutes > 9 ? minutes : `0${minutes}` }}</p>
+          <span>Phút</span>
+        </div>
+        <div>
+          <p>{{ seconds > 9 ? seconds : `0${seconds}` }}</p>
+          <span>Giây</span>
+        </div>
+      </div>
+      <p v-else class="event-happened">Đã diễn ra</p>
+    </div>
 
     <div class="border-line"></div>
 
