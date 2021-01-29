@@ -19,9 +19,9 @@
       <p style="font-size: 30px; color: red;">Tạm hoãn!</p>
     </div>
     <div v-else>
-      <p class="tab__content--time-left-text" v-if="!info.isHappened">Chỉ còn</p>
+      <p class="tab__content--time-left-text" v-if="!isHappened">Chỉ còn</p>
 
-      <div class="tab__content--count-time" v-if="!info.isHappened">
+      <div class="tab__content--count-time" v-if="!isHappened">
         <div>
           <p>{{ days > 9 ? days : `0${days}` }}</p>
           <span>Ngày</span>
@@ -44,32 +44,34 @@
 
     <div class="border-line"></div>
 
-    <div v-if="!info.isHappened">
-      <div class="tab__content--form" v-if="!isRegisted">
-        <p class="tab__content--form-title">Đăng ký tham gia</p>
-        <input type="text" name="username" v-model="username" placeholder="Tên của bạn" />
-        <input type="text" name="email" v-model="email" placeholder="Email công ty" />
-        <input
-          type="number"
-          name="phone"
-          v-model="phone"
-          placeholder="Số điện thoại (vd: 0988922271 😉)"
-        />
-        <button
-          class="btn-customize"
-          :class="{'loading' : isLoading}"
-          @click="join"
-          :disabled="isLoading"
-        >
-          <span v-if="isLoading">Đang gửi</span>
-          <span v-else>Tham gia</span>
-        </button>
-      </div>
+    <div v-if="!isHappened">
+      <div v-if="info.id !== 'han'">
+        <div class="tab__content--form" v-if="!isRegisted">
+          <p class="tab__content--form-title">Đăng ký tham gia</p>
+          <input type="text" name="username" v-model="username" placeholder="Tên của bạn" />
+          <input type="text" name="email" v-model="email" placeholder="Email công ty" />
+          <input
+            type="number"
+            name="phone"
+            v-model="phone"
+            placeholder="Số điện thoại (vd: 0988922271 😉)"
+          />
+          <button
+            class="btn-customize"
+            :class="{'loading' : isLoading}"
+            @click="join"
+            :disabled="isLoading"
+          >
+            <span v-if="isLoading">Đang gửi</span>
+            <span v-else>Tham gia</span>
+          </button>
+        </div>
 
-      <div class="tab__content--message" v-else>
-        <img src="@/assets/mail.png" alt />
-        <p>Chúng tôi vừa gửi QR code đến email của bạn</p>
-        <span>Vui lòng check email để nhận thư mời tham dự. Bạn nhớ lưu lại email này để check-in và tham gia các hoạt động khác tại sự kiện. Hẹn gặp lại bạn với những bất ngờ tại Year End Party AhaMove 2020!</span>
+        <div class="tab__content--message" v-else>
+          <img src="@/assets/mail.png" alt />
+          <p>Chúng tôi vừa gửi QR code đến email của bạn</p>
+          <span>Vui lòng check email để nhận thư mời tham dự. Bạn nhớ lưu lại email này để check-in và tham gia các hoạt động khác tại sự kiện. Hẹn gặp lại bạn với những bất ngờ tại Year End Party AhaMove 2020!</span>
+        </div>
       </div>
     </div>
   </div>
@@ -98,6 +100,13 @@ export default {
       isRegisted: false,
       isLoading: false
     };
+  },
+  computed: {
+    isHappened() {
+      return (
+        this.days < 0 && this.hours < 0 && this.minutes < 0 && this.seconds < 0
+      );
+    }
   },
   methods: {
     setCookie(cname, cvalue, exdays) {
@@ -135,13 +144,14 @@ export default {
         this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+        console.log("days", this.days);
+
         if (
           this.days == 0 &&
           this.hours == 0 &&
           this.minutes == 0 &&
           this.seconds == 0
         ) {
-          console.log("set", this.info.id);
           this.$emit("setHappened", this.info.id);
           clearInterval(this.timer);
         }
