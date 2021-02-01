@@ -6,6 +6,7 @@
     <Introduce ref="introduce" @onScroll="scrollTo" />
     <Form ref="form" />
     <News ref="news" />
+    <Images />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import Banner from "@/components/Banner.vue";
 import Introduce from "@/components/Introduce.vue";
 import Form from "@/components/Form.vue";
 import News from "@/components/News.vue";
+import Images from "@/components/Images.vue";
 
 export default {
   components: {
@@ -23,7 +25,8 @@ export default {
     Banner,
     Introduce,
     Form,
-    News
+    News,
+    Images
   },
   methods: {
     scrollTo(ele) {

@@ -2,7 +2,7 @@
   <div class="tab__content">
     <p style="font-weight: 300">AhaMove Year-end Party 2020 được tổ chức tại</p>
     <img src="@/assets/flower.png" alt="Flowers" />
-    <p>{{info.id === 'han' ? 'KHÁCH SẠN' : 'TRUNG TÂM HỘI NGHỊ'}}</p>
+    <p>{{ info.id === "han" ? "KHÁCH SẠN" : "TRUNG TÂM HỘI NGHỊ" }}</p>
 
     <p class="tab__content--location text-uppercase">{{ info.location }}</p>
     <p class="tab__content--detail text-uppercase" v-html="info.detail"></p>
@@ -48,8 +48,18 @@
       <div v-if="info.id !== 'han'">
         <div class="tab__content--form" v-if="!isRegisted">
           <p class="tab__content--form-title">Đăng ký tham gia</p>
-          <input type="text" name="username" v-model="username" placeholder="Tên của bạn" />
-          <input type="text" name="email" v-model="email" placeholder="Email công ty" />
+          <input
+            type="text"
+            name="username"
+            v-model="username"
+            placeholder="Tên của bạn"
+          />
+          <input
+            type="text"
+            name="email"
+            v-model="email"
+            placeholder="Email công ty"
+          />
           <input
             type="number"
             name="phone"
@@ -58,7 +68,7 @@
           />
           <button
             class="btn-customize"
-            :class="{'loading' : isLoading}"
+            :class="{ loading: isLoading }"
             @click="join"
             :disabled="isLoading"
           >
@@ -70,7 +80,11 @@
         <div class="tab__content--message" v-else>
           <img src="@/assets/mail.png" alt />
           <p>Chúng tôi vừa gửi QR code đến email của bạn</p>
-          <span>Vui lòng check email để nhận thư mời tham dự. Bạn nhớ lưu lại email này để check-in và tham gia các hoạt động khác tại sự kiện. Hẹn gặp lại bạn với những bất ngờ tại Year End Party AhaMove 2020!</span>
+          <span
+            >Vui lòng check email để nhận thư mời tham dự. Bạn nhớ lưu lại email
+            này để check-in và tham gia các hoạt động khác tại sự kiện. Hẹn gặp
+            lại bạn với những bất ngờ tại Year End Party AhaMove 2020!</span
+          >
         </div>
       </div>
     </div>
@@ -143,8 +157,6 @@ export default {
         );
         this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
         this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        console.log("days", this.days);
 
         if (
           this.days == 0 &&
