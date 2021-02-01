@@ -130,7 +130,7 @@ export default {
 
 @media screen and (max-width: 780px) {
   .news {
-    padding: 0 15px;
+    padding: 15px;
     .news--layout {
       grid-template-columns: auto;
     }
