@@ -3,11 +3,18 @@
     <div class="main-layout">
       <p>Tin tức chương trình Year-end Party</p>
       <div class="news--layout">
-        <div class="new" v-for="item in news" :key="item.id" @click="redirect(item.url)">
+        <div
+          class="new"
+          v-for="item in news"
+          :key="item.id"
+          @click="redirect(item.url)"
+        >
           <div class="new--image">
             <img :src="item.img" alt />
           </div>
-          <div class="new--title line-clamp-1" :title="item.title">{{item.title}}</div>
+          <div class="new--title line-clamp-1" :title="item.title">
+            {{ item.title }}
+          </div>
           <div
             class="new--description line-clamp"
             :title="item.description"
@@ -61,6 +68,7 @@ export default {
 
 <style lang="scss" scoped>
 .news {
+  padding-bottom: 30px;
   p {
     text-align: left;
     font-size: 35px;

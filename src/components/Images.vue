@@ -5,10 +5,7 @@
       <div>Cảm ơn bạn đã tham gia sự kiện</div>
     </div>
 
-    <VueAgile
-      autoplay
-      centerMode
-      >
+    <VueAgile autoplay centerMode>
       <div class="slide">
         <img
           src="https://cdn.ahamove.com/app/images/c6b1c342c82eafdba9412212d69eb048.jpeg"
@@ -30,15 +27,16 @@
       <template slot="nextButton">
         <span>&#10095;</span>
       </template>
-
     </VueAgile>
 
-    <button class="images__view-more" @click="viewMore">Xem tất cả hình ảnh</button>
+    <button class="images__view-more" @click="viewMore">
+      Xem tất cả hình ảnh
+    </button>
   </div>
 </template>
 
 <script>
-import { VueAgile } from 'vue-agile'
+import { VueAgile } from "vue-agile";
 
 export default {
   components: {
@@ -46,7 +44,10 @@ export default {
   },
   methods: {
     viewMore() {
-      window.open('https://drive.google.com/drive/folders/1afLKtc9H9IeoQNcwP7TXWUmLAcasByZU?usp=sharing', '_blank')
+      window.open(
+        "https://drive.google.com/drive/folders/1afLKtc9H9IeoQNcwP7TXWUmLAcasByZU?usp=sharing",
+        "_blank"
+      );
     }
   }
 };
@@ -54,8 +55,8 @@ export default {
 
 <style lang="scss">
 .images {
-  max-width: 1200px;
-  margin: 24px auto;
+  // max-width: 1200px;
+  // margin: 24px auto;
   padding: 50px;
   background-image: url("../assets/main-bg-s2.png");
   background-position: center;
@@ -84,7 +85,7 @@ export default {
     height: 48px;
     width: 200px;
     color: #fff;
-    background-color: #FF8200;
+    background-color: #ff8200;
     font-weight: 600;
     outline: none;
     cursor: pointer;
@@ -92,7 +93,6 @@ export default {
     font-size: 16px;
   }
 }
-
 
 @media screen and (max-width: 480px) {
   .images {
