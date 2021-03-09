@@ -14,11 +14,11 @@
     <div class="tab__content--date">
       <p>{{ info.date }}</p>
     </div>
-
+    <!-- 
     <div v-if="info.id === 'han'">
       <p style="font-size: 30px; color: red;">Tạm hoãn!</p>
-    </div>
-    <div v-else>
+    </div>-->
+    <div>
       <p class="tab__content--time-left-text" v-if="!isHappened">Chỉ còn</p>
 
       <div class="tab__content--count-time" v-if="!isHappened">
@@ -45,47 +45,35 @@
     <div class="border-line"></div>
 
     <div v-if="!isHappened">
-      <div v-if="info.id !== 'han'">
-        <div class="tab__content--form" v-if="!isRegisted">
-          <p class="tab__content--form-title">Đăng ký tham gia</p>
-          <input
-            type="text"
-            name="username"
-            v-model="username"
-            placeholder="Tên của bạn"
-          />
-          <input
-            type="text"
-            name="email"
-            v-model="email"
-            placeholder="Email công ty"
-          />
-          <input
-            type="number"
-            name="phone"
-            v-model="phone"
-            placeholder="Số điện thoại (vd: 0988922271 😉)"
-          />
-          <button
-            class="btn-customize"
-            :class="{ loading: isLoading }"
-            @click="join"
-            :disabled="isLoading"
-          >
-            <span v-if="isLoading">Đang gửi</span>
-            <span v-else>Tham gia</span>
-          </button>
-        </div>
+      <div class="tab__content--form" v-if="!isRegisted">
+        <p class="tab__content--form-title">Đăng ký tham gia</p>
+        <input type="text" name="username" v-model="username" placeholder="Tên của bạn" />
+        <input type="text" name="email" v-model="email" placeholder="Email công ty" />
+        <input
+          type="number"
+          name="phone"
+          v-model="phone"
+          placeholder="Số điện thoại (vd: 0988922271 😉)"
+        />
+        <button
+          class="btn-customize"
+          :class="{ loading: isLoading }"
+          @click="join"
+          :disabled="isLoading"
+        >
+          <span v-if="isLoading">Đang gửi</span>
+          <span v-else>Tham gia</span>
+        </button>
+      </div>
 
-        <div class="tab__content--message" v-else>
-          <img src="@/assets/mail.png" alt />
-          <p>Chúng tôi vừa gửi QR code đến email của bạn</p>
-          <span
-            >Vui lòng check email để nhận thư mời tham dự. Bạn nhớ lưu lại email
-            này để check-in và tham gia các hoạt động khác tại sự kiện. Hẹn gặp
-            lại bạn với những bất ngờ tại Year End Party AhaMove 2020!</span
-          >
-        </div>
+      <div class="tab__content--message" v-else>
+        <img src="@/assets/mail.png" alt />
+        <p>Chúng tôi vừa gửi QR code đến email của bạn</p>
+        <span>
+          Vui lòng check email để nhận thư mời tham dự. Bạn nhớ lưu lại email
+          này để check-in và tham gia các hoạt động khác tại sự kiện. Hẹn gặp
+          lại bạn với những bất ngờ tại Year End Party AhaMove 2020!
+        </span>
       </div>
     </div>
   </div>

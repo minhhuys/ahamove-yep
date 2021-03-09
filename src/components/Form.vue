@@ -10,14 +10,14 @@
       <div class="form__register--tab">
         <p
           class="form__register--tab-link"
-          :class="{ active: isActiveTabConent === 'sgn' }"
-          @click="selectTab('sgn')"
-        >Sài Gòn</p>
-        <p
-          class="form__register--tab-link"
           :class="{ active: isActiveTabConent === 'han' }"
           @click="selectTab('han')"
         >Hà Nội</p>
+        <p
+          class="form__register--tab-link"
+          :class="{ active: isActiveTabConent === 'sgn' }"
+          @click="selectTab('sgn')"
+        >Sài Gòn</p>
       </div>
       <TabContent
         :key="isActiveTabConent"
@@ -45,8 +45,8 @@ export default {
           location: "Pullman Hanoi",
           detail: "<p>Số 40 phố Cát Linh, Đống Đa, Hà Nội</p>",
           time: `Vào lúc 17 giờ 30`,
-          date: "THỨ BẢY - 30 | 01 | 2021",
-          timeToCountDown: "Jan 30, 2021 17:30:00",
+          date: "THỨ SÁU - 26 | 03 | 2021",
+          timeToCountDown: "Mar 26, 2021 18:00:00",
           isHappened: false
         },
         {
@@ -68,13 +68,12 @@ export default {
     },
 
     handleEventHappened(id) {
-      console.log("id", id);
       const location = this.info.find(e => e.id === id);
       location.isHappened = true;
     }
   },
   mounted() {
-    this.isActiveTabConent = "sgn";
+    this.isActiveTabConent = "han";
   }
 };
 </script>

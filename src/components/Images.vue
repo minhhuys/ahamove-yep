@@ -1,11 +1,11 @@
 <template>
   <div class="images">
     <div class="images__title">
-      <img src="@/assets/magical.png" alt="" />
+      <img src="@/assets/magical.png" alt />
       <div>Cảm ơn bạn đã tham gia sự kiện</div>
     </div>
 
-    <VueAgile autoplay centerMode>
+    <!-- <VueAgile autoplay centerMode>
       <div class="slide">
         <img
           src="https://cdn.ahamove.com/app/images/c6b1c342c82eafdba9412212d69eb048.jpeg"
@@ -27,7 +27,40 @@
       <template slot="nextButton">
         <span>&#10095;</span>
       </template>
-    </VueAgile>
+    </VueAgile>-->
+    <!-- <VueSlickCarousel :arrows="true" :dots="true" v-bind="settings">
+      <div class="item">
+        <img src="https://cdn.ahamove.com/app/images/c6b1c342c82eafdba9412212d69eb048.jpeg" alt />
+      </div>
+      <div class="item">
+        <img src="@/assets/2.jpeg" alt />
+      </div>
+      <div class="item">
+        <img src="@/assets/3.jpeg" alt />
+      </div>
+      <div class="item">
+        <img src="@/assets/4.jpeg" alt />
+      </div>
+    </VueSlickCarousel> -->
+
+    <Slick ref="slick" :options="slickOptions">
+      <a
+        class="item"
+        href="https://cdn.ahamove.com/app/images/c6b1c342c82eafdba9412212d69eb048.jpeg"
+        ><img
+          src="https://cdn.ahamove.com/app/images/c6b1c342c82eafdba9412212d69eb048.jpeg"
+          alt=""
+      /></a>
+      <a class="item" href="@/assets/2.jpeg"
+        ><img src="@/assets/2.jpeg" alt=""
+      /></a>
+      <a class="item" href="@/assets/3.jpeg"
+        ><img src="@/assets/3.jpeg" alt=""
+      /></a>
+      <a class="item" href="@/assets/4.jpeg"
+        ><img src="@/assets/4.jpeg" alt=""
+      /></a>
+    </Slick>
 
     <button class="images__view-more" @click="viewMore">
       Xem tất cả hình ảnh
@@ -36,11 +69,49 @@
 </template>
 
 <script>
-import { VueAgile } from "vue-agile";
+// import { VueAgile } from "vue-agile";
+
+// import VueSlickCarousel from "vue-slick-carousel";
+// import "vue-slick-carousel/dist/vue-slick-carousel.css";
+// // optional style for arrows & dots
+// import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
+import Slick from "vue-slick";
+import "slick-carousel/slick/slick.css";
 
 export default {
   components: {
-    VueAgile
+    // VueAgile,
+    Slick
+  },
+  data() {
+    return {
+      slickOptions: {
+        centerMode: true,
+        centerPadding: "60px",
+        slidesToShow: 3,
+        autoplay: true,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: "40px",
+              slidesToShow: 3
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              arrows: false,
+              centerMode: true,
+              centerPadding: "40px",
+              slidesToShow: 1
+            }
+          }
+        ]
+      }
+    };
   },
   methods: {
     viewMore() {
@@ -48,12 +119,22 @@ export default {
         "https://drive.google.com/drive/folders/1afLKtc9H9IeoQNcwP7TXWUmLAcasByZU?usp=sharing",
         "_blank"
       );
+    },
+
+    reInit() {
+      // Helpful if you have to deal with v-for to update dynamic lists
+      this.$nextTick(() => {
+        this.$refs.slick.reSlick();
+      });
     }
   }
 };
 </script>
 
 <style lang="scss">
+.slick-arrow {
+  display: none !important;
+}
 .images {
   // max-width: 1200px;
   // margin: 24px auto;
@@ -63,6 +144,21 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   text-align: center;
+
+  .slick-center {
+    img {
+      transform: scale(1.5);
+    }
+  }
+
+  .item {
+    width: 100%;
+    img {
+      max-width: 100%;
+      margin: 10px;
+      padding: 2%;
+    }
+  }
 
   .images__title {
     img {
@@ -96,6 +192,7 @@ export default {
 
 @media screen and (max-width: 480px) {
   .images {
+    padding: 25px;
     .images__title > div {
       font-size: 21px;
       line-height: normal;
