@@ -72,7 +72,7 @@
         <span>
           Vui lòng check email để nhận thư mời tham dự. Bạn nhớ lưu lại email
           này để check-in và tham gia các hoạt động khác tại sự kiện. Hẹn gặp
-          lại bạn với những bất ngờ tại Year End Party AhaMove 2020!
+          lại bạn với những bất ngờ tại New Year Party AhaMove 2021!
         </span>
       </div>
     </div>
