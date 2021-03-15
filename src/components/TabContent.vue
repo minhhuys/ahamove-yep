@@ -1,6 +1,6 @@
 <template>
   <div class="tab__content">
-    <p style="font-weight: 300">AhaMove Year-end Party 2020 được tổ chức tại</p>
+    <p style="font-weight: 300">AhaMove New Year Party 2021 được tổ chức tại</p>
     <img src="@/assets/flower.png" alt="Flowers" />
     <p>{{ info.id === "han" ? "KHÁCH SẠN" : "TRUNG TÂM HỘI NGHỊ" }}</p>
 
