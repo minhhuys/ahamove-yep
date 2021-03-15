@@ -7,9 +7,11 @@
         data-aos-delay="50"
         data-aos-duration="1000"
         data-aos-easing="ease-in-out"
-        src="https://ahamove.com/wp-content/uploads/2021/01/yep.png"
         alt="Yep ahamove"
+        src="https://ahamove.com/wp-content/uploads/2021/03/yep.png"
       />
+      <!-- src="https://ahamove.com/wp-content/uploads/2021/01/yep.png" -->
+
       <img
         data-aos="fade-right"
         data-aos-delay="50"

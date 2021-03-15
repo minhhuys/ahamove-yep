@@ -1,20 +1,13 @@
 <template>
   <div class="news">
     <div class="main-layout">
-      <p>Tin tức chương trình Year-end Party</p>
+      <p>Tin tức chương trình New Year Party</p>
       <div class="news--layout">
-        <div
-          class="new"
-          v-for="item in news"
-          :key="item.id"
-          @click="redirect(item.url)"
-        >
+        <div class="new" v-for="item in news" :key="item.id" @click="redirect(item.url)">
           <div class="new--image">
             <img :src="item.img" alt />
           </div>
-          <div class="new--title line-clamp-1" :title="item.title">
-            {{ item.title }}
-          </div>
+          <div class="new--title line-clamp-1" :title="item.title">{{ item.title }}</div>
           <div
             class="new--description line-clamp"
             :title="item.description"

@@ -4,7 +4,7 @@
       <img src="@/assets/logo-white.png" alt="Logo Ahamove" />
     </div>
     <div class="text-center yep-img" style="margin-bottom: 1rem;">
-      <img src="@/assets/yep.png" alt="YEP image" />
+      <img src="https://ahamove.com/wp-content/uploads/2021/03/yep.png" alt="YEP image" />
     </div>
     <div class="form__register">
       <div class="form__register--tab">
@@ -44,7 +44,7 @@ export default {
           id: "han",
           location: "Pullman Hanoi",
           detail: "<p>Số 40 phố Cát Linh, Đống Đa, Hà Nội</p>",
-          time: `Vào lúc 17 giờ 30`,
+          time: `Vào lúc 18 giờ 00`,
           date: "THỨ SÁU - 26 | 03 | 2021",
           timeToCountDown: "Mar 26, 2021 18:00:00",
           isHappened: false
