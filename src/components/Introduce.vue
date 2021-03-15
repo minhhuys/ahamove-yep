@@ -24,7 +24,7 @@
         data-aos-once="false"
         data-aos-anchor-placement="top-center"
       >
-        <img src="../assets/background-s2-2.png" alt />
+        <img src="../assets/background-s2-min.png" alt />
       </div>
     </div>
   </div>
