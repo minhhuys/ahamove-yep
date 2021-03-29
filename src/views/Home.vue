@@ -4,9 +4,9 @@
     <Header @onScroll="scrollTo" />
     <Banner />
     <Introduce ref="introduce" @onScroll="scrollTo" />
-    <Form ref="form" />
-    <News ref="news" />
     <Images />
+    <News ref="news" />
+    <Form ref="form" />
   </div>
 </template>
 

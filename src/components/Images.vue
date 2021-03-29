@@ -41,30 +41,102 @@
       <div class="item">
         <img src="@/assets/4.jpeg" alt />
       </div>
-    </VueSlickCarousel> -->
+    </VueSlickCarousel>-->
 
     <Slick ref="slick" :options="slickOptions">
       <a
         class="item"
         href="https://cdn.ahamove.com/app/images/c6b1c342c82eafdba9412212d69eb048.jpeg"
-        ><img
-          src="https://cdn.ahamove.com/app/images/c6b1c342c82eafdba9412212d69eb048.jpeg"
-          alt=""
-      /></a>
-      <a class="item" href="@/assets/2.jpeg"
-        ><img src="@/assets/2.jpeg" alt=""
-      /></a>
-      <a class="item" href="@/assets/3.jpeg"
-        ><img src="@/assets/3.jpeg" alt=""
-      /></a>
-      <a class="item" href="@/assets/4.jpeg"
-        ><img src="@/assets/4.jpeg" alt=""
-      /></a>
+      >
+        <img src="https://cdn.ahamove.com/app/images/c6b1c342c82eafdba9412212d69eb048.jpeg" alt />
+      </a>
+      <a
+        class="item"
+        href="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.23.38.png"
+      >
+        <img
+          src="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.23.38.png"
+          alt
+        />
+      </a>
+      <a class="item" href="@/assets/5.png">
+        <img src="@/assets/5.png" alt />
+      </a>
+      <a class="item" href="@/assets/3.jpeg">
+        <img src="@/assets/3.jpeg" alt />
+      </a>
+      <a
+        class="item"
+        href="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.23.23.png"
+      >
+        <img
+          src="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.23.23.png"
+          alt
+        />
+      </a>
+      <a
+        class="item"
+        href="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.23.04.png"
+      >
+        <img
+          src="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.23.04.png"
+          alt
+        />
+      </a>
+      <a
+        class="item"
+        href="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.22.14.png"
+      >
+        <img
+          src="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.22.14.png"
+          alt
+        />
+      </a>
+      <a class="item" href="@/assets/2.jpeg">
+        <img src="@/assets/2.jpeg" alt />
+      </a>
+      <a class="item" href="@/assets/4.jpeg">
+        <img src="@/assets/4.jpeg" alt />
+      </a>
+      <a
+        class="item"
+        href="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.21.15.png"
+      >
+        <img
+          src="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.21.15.png"
+          alt
+        />
+      </a>
+      <a
+        class="item"
+        href="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.20.50.png"
+      >
+        <img
+          src="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.20.50.png"
+          alt
+        />
+      </a>
+      <a
+        class="item"
+        href="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.20.29.png"
+      >
+        <img
+          src="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.20.29.png"
+          alt
+        />
+      </a>
+      <a
+        class="item"
+        href="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.20.17.png"
+      >
+        <img
+          src="https://ahamove.com/wp-content/uploads/2021/03/Screen-Shot-2021-03-29-at-18.20.17.png"
+          alt
+        />
+      </a>
     </Slick>
 
-    <button class="images__view-more" @click="viewMore">
-      Xem tất cả hình ảnh
-    </button>
+    <button class="images__view-more" @click="viewMore">Xem tất cả hình ảnh</button>
   </div>
 </template>
 
